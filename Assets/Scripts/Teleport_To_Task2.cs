@@ -72,7 +72,7 @@ public class Teleport_Task2 : MonoBehaviour
         // Teleport the user to the Task 2
         transform.position = new Vector3(-145f, 8f, -300f);
 
-        transform.eulerAngles = new Vector3(0, 180, 0);
+        transform.eulerAngles = new Vector3(0, 0, 0);
         door.transform.eulerAngles = new Vector3(0,0,0);
         
         // Set isTeleporting to false after a short delay to prevent rapid teleportation
