@@ -30,7 +30,7 @@ public class Teleport_Task2 : MonoBehaviour
         {
             // Cast a ray into the scene
             RaycastHit hit;
-            var rightTransform = cameraRig.rightControllerAnchor.transform;
+            var rightTransform = cameraRig.rightControllerAnchor.transform;            
             if (Physics.Raycast(rightTransform.position, rightTransform.forward, out hit))
             {
                 // Visualize the ray using LineRenderer
@@ -71,17 +71,16 @@ public class Teleport_Task2 : MonoBehaviour
     {
         // Teleport the user to the Task 2
         transform.position = new Vector3(-145f, 8f, -300f);
-
         transform.eulerAngles = new Vector3(0, 0, 0);
-        door.transform.eulerAngles = new Vector3(0,0,0);
+        door.transform.eulerAngles = new Vector3(0, 0, 0);
         
         // Set isTeleporting to false after a short delay to prevent rapid teleportation
         Invoke("ResetTeleport", 0.5f);
+        teleportLineRenderer.enabled = false;
     }
 
     void ResetTeleport()
     {
         isTeleporting = false;
-        teleportLineRenderer.enabled = false;
     }
 }

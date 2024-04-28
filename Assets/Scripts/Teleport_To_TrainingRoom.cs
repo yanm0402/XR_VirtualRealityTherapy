@@ -71,12 +71,12 @@ public class Teleport_TrainingRoom : MonoBehaviour
     {
         // Teleport the user to the Training room
         transform.position = new Vector3(300f, 2f, 300f);
-
         transform.eulerAngles = new Vector3(0, 0, 0);
-        door.transform.eulerAngles = new Vector3(0,0,0);
+        door.transform.eulerAngles = new Vector3(0, 0, 0);
         
         // Set isTeleporting to false after a short delay to prevent rapid teleportation
         Invoke("ResetTeleport", 0.5f);
+        teleportLineRenderer.enabled = false;
     }
 
     void ResetTeleport()

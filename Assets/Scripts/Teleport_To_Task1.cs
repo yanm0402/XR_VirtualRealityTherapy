@@ -76,11 +76,11 @@ public class Teleport_Task1 : MonoBehaviour
         
         // Set isTeleporting to false after a short delay to prevent rapid teleportation
         Invoke("ResetTeleport", 0.5f);
+        teleportLineRenderer.enabled = false;
     }
 
     void ResetTeleport()
     {
         isTeleporting = false;
-        teleportLineRenderer.enabled = false;
     }
 }

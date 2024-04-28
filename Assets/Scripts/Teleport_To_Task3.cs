@@ -71,17 +71,16 @@ public class Teleport_Task3 : MonoBehaviour
     {
         // Teleport the user to the Task 3
         transform.position = new Vector3(-300f, 3f, 300f);
-
         transform.eulerAngles = new Vector3(0, 0, 0);
-        door.transform.eulerAngles = new Vector3(0,0,0);
+        door.transform.eulerAngles = new Vector3(0, 0, 0);
         
         // Set isTeleporting to false after a short delay to prevent rapid teleportation
         Invoke("ResetTeleport", 0.5f);
+        teleportLineRenderer.enabled = false;
     }
 
     void ResetTeleport()
     {
         isTeleporting = false;
-        teleportLineRenderer.enabled = false;
     }
 }

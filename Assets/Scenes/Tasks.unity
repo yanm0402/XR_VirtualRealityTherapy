@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17338732, g: 0.21673925, b: 0.2988084, a: 1}
+  m_IndirectSpecularColor: {r: 0.17338742, g: 0.21673962, b: 0.29880893, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1681,6 +1681,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1384633903}
   - {fileID: 877782840}
   - {fileID: 104323310}
   - {fileID: 1238572701}
@@ -1691,7 +1692,6 @@ Transform:
   - {fileID: 1096722485}
   - {fileID: 464299203}
   - {fileID: 1950527262}
-  - {fileID: 1384633903}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &130418815
@@ -2795,6 +2795,7 @@ GameObject:
   - component: {fileID: 243594503}
   - component: {fileID: 243594502}
   - component: {fileID: 243594501}
+  - component: {fileID: 243594505}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -2888,6 +2889,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 700936398}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!167 &243594505
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243594500}
+  m_Enabled: 1
+  m_MinDistance: 5
+  m_MaxDistance: 10
+  m_ReverbPreset: 7
+  m_Room: -1000
+  m_RoomHF: -476
+  m_DecayTime: 4.32
+  m_DecayHFRatio: 0.59
+  m_Reflections: -789
+  m_ReflectionsDelay: 0.02
+  m_Reverb: -289
+  m_ReverbDelay: 0.03
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1001 &283221275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4171,7 +4196,7 @@ GameObject:
   - component: {fileID: 410798568}
   - component: {fileID: 410798567}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Audio_Auditorium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4185,13 +4210,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410798565}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -19.868958, y: -9.17, z: 2.044281}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -19.868958, y: -9.17, z: 0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 700936398}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &410798567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4207,26 +4232,26 @@ MonoBehaviour:
   directBinaural: 1
   interpolation: 0
   perspectiveCorrection: 0
-  distanceAttenuation: 0
+  distanceAttenuation: 1
   distanceAttenuationInput: 0
   distanceAttenuationValue: 1
-  airAbsorption: 0
+  airAbsorption: 1
   airAbsorptionInput: 0
   airAbsorptionLow: 1
   airAbsorptionMid: 1
   airAbsorptionHigh: 1
-  directivity: 0
+  directivity: 1
   directivityInput: 0
   dipoleWeight: 0
   dipolePower: 0
   directivityValue: 1
-  occlusion: 0
+  occlusion: 1
   occlusionInput: 0
-  occlusionType: 0
+  occlusionType: 1
   occlusionRadius: 1
   occlusionSamples: 16
   occlusionValue: 1
-  transmission: 0
+  transmission: 1
   transmissionType: 0
   transmissionInput: 0
   transmissionLow: 1
@@ -4281,7 +4306,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410798565}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 921f3e39dc022452fb49e59028e5b373, type: 3}
@@ -4295,7 +4320,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -4852,6 +4877,7 @@ GameObject:
   - component: {fileID: 466232182}
   - component: {fileID: 466232181}
   - component: {fileID: 466232180}
+  - component: {fileID: 466232184}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -4945,6 +4971,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 700936398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!167 &466232184
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466232179}
+  m_Enabled: 1
+  m_MinDistance: 5
+  m_MaxDistance: 10
+  m_ReverbPreset: 7
+  m_Room: -1000
+  m_RoomHF: -476
+  m_DecayTime: 4.32
+  m_DecayHFRatio: 0.59
+  m_Reflections: -789
+  m_ReflectionsDelay: 0.02
+  m_Reverb: -289
+  m_ReverbDelay: 0.03
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1 &482269475
 GameObject:
   m_ObjectHideFlags: 0
@@ -16548,7 +16598,7 @@ GameObject:
   - component: {fileID: 1384633905}
   - component: {fileID: 1384633904}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Audio_Woods
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16563,7 +16613,7 @@ Transform:
   m_GameObject: {fileID: 1384633902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -474.7, y: 159.9, z: 300.3}
+  m_LocalPosition: {x: -474.7, y: 157.65, z: 300.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16658,7 +16708,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384633902}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 20121dd9d79b6704bb48c293feb8ab8e, type: 3}
@@ -21773,6 +21823,7 @@ GameObject:
   - component: {fileID: 1637675683}
   - component: {fileID: 1637675682}
   - component: {fileID: 1637675681}
+  - component: {fileID: 1637675685}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -21866,6 +21917,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 700936398}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!167 &1637675685
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637675680}
+  m_Enabled: 1
+  m_MinDistance: 5
+  m_MaxDistance: 10
+  m_ReverbPreset: 7
+  m_Room: -1000
+  m_RoomHF: -476
+  m_DecayTime: 4.32
+  m_DecayHFRatio: 0.59
+  m_Reflections: -789
+  m_ReflectionsDelay: 0.02
+  m_Reverb: -289
+  m_ReverbDelay: 0.03
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1 &1642127271
 GameObject:
   m_ObjectHideFlags: 0
@@ -21878,6 +21953,7 @@ GameObject:
   - component: {fileID: 1642127274}
   - component: {fileID: 1642127273}
   - component: {fileID: 1642127272}
+  - component: {fileID: 1642127276}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -21971,6 +22047,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 700936398}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!167 &1642127276
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642127271}
+  m_Enabled: 1
+  m_MinDistance: 5
+  m_MaxDistance: 10
+  m_ReverbPreset: 7
+  m_Room: -1000
+  m_RoomHF: -476
+  m_DecayTime: 4.32
+  m_DecayHFRatio: 0.59
+  m_Reflections: -789
+  m_ReflectionsDelay: 0.02
+  m_Reverb: -289
+  m_ReverbDelay: 0.03
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1001 &1654959068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23455,6 +23555,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2039909995}
   - {fileID: 1156310047}
   - {fileID: 705938067}
   - {fileID: 893200935}
@@ -23501,7 +23602,6 @@ Transform:
   - {fileID: 1826304834}
   - {fileID: 1026420103}
   - {fileID: 447349907}
-  - {fileID: 2039909995}
   - {fileID: 1330409274}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24583,6 +24683,7 @@ GameObject:
   - component: {fileID: 1965809616}
   - component: {fileID: 1965809615}
   - component: {fileID: 1965809614}
+  - component: {fileID: 1965809618}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -24676,6 +24777,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 700936398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!167 &1965809618
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965809613}
+  m_Enabled: 1
+  m_MinDistance: 5
+  m_MaxDistance: 10
+  m_ReverbPreset: 7
+  m_Room: -1000
+  m_RoomHF: -476
+  m_DecayTime: 4.32
+  m_DecayHFRatio: 0.59
+  m_Reflections: -789
+  m_ReflectionsDelay: 0.02
+  m_Reverb: -289
+  m_ReverbDelay: 0.03
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1001 &1985772658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25442,7 +25567,7 @@ GameObject:
   - component: {fileID: 2039909998}
   - component: {fileID: 2039909999}
   m_Layer: 0
-  m_Name: Audio Source (1)
+  m_Name: Audio_Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25552,12 +25677,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039909994}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fba6842c7b054414585c996b2d7de85c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.538
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -25566,9 +25691,9 @@ AudioSource:
   Priority: 155
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 2
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
